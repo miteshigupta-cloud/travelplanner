@@ -1,0 +1,102 @@
+
+Action: file_editor create /app/frontend/public/travel-planner/budget.html --file-text "<!DOCTYPE html>
+<!-- 
+  Travel Planner - Budget Page
+  Simple input fields for Travel, Hotel and Food cost.
+  NOTE: Since we are using ONLY HTML and CSS (no JavaScript),
+  clicking the \"Calculate Total\" button will reveal a sample
+  total area using the CSS :target trick. To get a real calculation,
+  a few lines of JavaScript can be added later.
+-->
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+  <title>Travel Planner - Budget</title>
+  <link rel=\"stylesheet\" href=\"style.css\" />
+  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+  <link href=\"https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap\" rel=\"stylesheet\">
+</head>
+<body>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <header class=\"navbar\">
+    <h1 class=\"logo\">Travel Planner</h1>
+    <nav>
+      <ul class=\"nav-links\">
+        <li><a href=\"index.html\">Home</a></li>
+        <li><a href=\"destinations.html\">Destinations</a></li>
+        <li><a href=\"budget.html\" class=\"active\">Budget</a></li>
+        <li><a href=\"contact.html\">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============ PAGE HEADING ============ -->
+  <section class=\"page-heading\">
+    <h2>Plan Your Travel Budget</h2>
+    <p>Enter your costs below and click the button to see your total.</p>
+  </section>
+
+  <!-- ============ BUDGET FORM ============ -->
+  <section class=\"budget-section\">
+    <form class=\"budget-form\" action=\"#total-box\" method=\"get\">
+
+      <!-- Travel Cost -->
+      <label for=\"travel\">Travel Cost (in Rupees)</label>
+      <input 
+        type=\"number\" 
+        id=\"travel\" 
+        name=\"travel\" 
+        placeholder=\"e.g. 5000\" 
+        min=\"0\"
+      />
+
+      <!-- Hotel Cost -->
+      <label for=\"hotel\">Hotel Cost (in Rupees)</label>
+      <input 
+        type=\"number\" 
+        id=\"hotel\" 
+        name=\"hotel\" 
+        placeholder=\"e.g. 3000\" 
+        min=\"0\"
+      />
+
+      <!-- Food Cost -->
+      <label for=\"food\">Food Cost (in Rupees)</label>
+      <input 
+        type=\"number\" 
+        id=\"food\" 
+        name=\"food\" 
+        placeholder=\"e.g. 2000\" 
+        min=\"0\"
+      />
+
+      <!-- Submit button -->
+      <button type=\"submit\" class=\"btn\">Calculate Total</button>
+    </form>
+
+    <!-- 
+      The total box only appears when the URL has #total-box
+      (which happens when the form is submitted because action=\"#total-box\").
+      This is a pure CSS trick using :target — no JavaScript needed.
+    -->
+    <div id=\"total-box\" class=\"total-box\">
+      <h3>Your Estimated Total</h3>
+      <p class=\"total-amount\">Travel + Hotel + Food</p>
+      <p class=\"total-note\">
+        Add up the three numbers you entered above — that's your total
+        trip budget! (For an automatic calculation, a small piece of
+        JavaScript can be added later.)
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class=\"footer\">
+    <p>&copy; 2026 Travel Planner | A beginner web project</p>
+  </footer>
+
+</body>
+</html>

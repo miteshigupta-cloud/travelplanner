@@ -1,0 +1,482 @@
+
+:root {
+  --peach: #ffd6c2;       /* soft peach */
+  --pink: #ffc8dd;        /* light pink */
+  --lavender: #cdb4db;    /* pastel lavender */
+  --mint: #bde0c4;        /* mint green */
+  --sky: #bde0fe;         /* sky blue */
+  --cream: #fff5e6;       /* cream background */
+  --dark-text:#4a4a4a;   /* soft dark grey for text */
+  --accent: #ff8fab;      /* deeper pink for buttons */
+}
+
+
+/* ----------- 2. GLOBAL RESET ----------- */
+/* Remove default margins/padding so layout is predictable */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ----------- 3. BODY / GENERAL STYLES ----------- */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--cream);
+  color: var(--dark-text);
+  line-height: 1.6;
+  /* Simple fade-in when the page loads */
+  animation: fadeIn 0.8s ease-in;
+}
+
+/* Fade-in animation for the whole page */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+/* ----------- 4. NAVIGATION BAR ----------- */
+.navbar {
+  background-color: var(--pink);
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Website title / logo */
+.logo {
+  font-family: 'Pacifico', cursive;  /* fancy script font */
+  font-size: 28px;
+  color: #6a3a4a;
+}
+
+/* Nav menu list */
+.nav-links {
+  list-style: none;       /* removes bullets */
+  display: flex;
+  gap: 20px;
+}
+
+/* Nav menu links */
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark-text);
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for nav links */
+.nav-links a:hover {
+  background-color: var(--lavender);
+  color: white;
+}
+
+/* Highlight the current page link */
+.nav-links a.active {
+  background-color: var(--accent);
+  color: white;
+}
+
+
+/* ----------- 5. HOME PAGE: HERO SECTION ----------- */
+.hero {
+  display: flex;
+  flex-wrap: wrap;          /* wraps on smaller screens */
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  gap: 40px;
+  background: linear-gradient(120deg, var(--peach), var(--sky));
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+  /* Slide in from the left */
+  animation: slideLeft 1s ease-out;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 280px;
+  /* Slide in from the right */
+  animation: slideRight 1s ease-out;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.welcome {
+  font-size: 38px;
+  margin-bottom: 18px;
+  color: #5a3a5a;
+}
+
+.intro {
+  font-size: 17px;
+  margin-bottom: 25px;
+}
+
+/* Slide-in animations */
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+
+/* ----------- 6. BUTTONS ----------- */
+.btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Hover effect for buttons - they grow slightly */
+.btn:hover {
+  background-color: #e76d8d;
+  transform: scale(1.05);
+}
+
+
+/* ----------- 7. INFO CARDS (Home page) ----------- */
+.info-section {
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #5a3a5a;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.info-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 18px;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+/* Lift card up on hover */
+.info-card:hover {
+  transform: translateY(-6px);
+}
+
+/* The little circle on top of each card */
+.emoji-circle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: var(--mint);
+  margin: 0 auto 12px auto;
+  font-size: 24px;
+  font-weight: 700;
+  color: #3a6a4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-card h4 {
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+
+/* ----------- 8. PAGE HEADING (other pages) ----------- */
+.page-heading {
+  text-align: center;
+  padding: 50px 20px 20px 20px;
+  background: linear-gradient(120deg, var(--lavender), var(--mint));
+  animation: fadeIn 1s ease-in;
+}
+
+.page-heading h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+  color: #4a3a5a;
+}
+
+
+/* ----------- 9. DESTINATIONS GRID ----------- */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 40px 30px;
+}
+
+.destination-card {
+  background-color: white;
+  border-radius: 18px;
+  overflow: hidden;             /* keeps image corners rounded */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+}
+
+/* Lift destination cards on hover */
+.destination-card:hover {
+  transform: translateY(-8px);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;            /* image fills nicely */
+  display: block;
+}
+
+.card-content {
+  padding: 18px;
+}
+
+.card-content h3 {
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+
+/* ----------- 10. BUDGET PAGE ----------- */
+.budget-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.budget-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.budget-form label {
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #5a3a5a;
+}
+
+.budget-form input {
+  padding: 12px 14px;
+  border: 2px solid var(--peach);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--cream);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+/* Highlight border when typing in input */
+.budget-form input:focus {
+  border-color: var(--accent);
+}
+
+.budget-form button {
+  margin-top: 25px;
+}
+
+/* Total box hidden by default, shown when URL has #total-box */
+.total-box {
+  display: none;
+  margin-top: 30px;
+  background-color: var(--mint);
+  padding: 25px 30px;
+  border-radius: 18px;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* CSS :target trick - shows the box after Submit */
+.total-box:target {
+  display: block;
+  animation: popIn 0.5s ease-out;
+}
+
+.total-box h3 {
+  color: #3a6a4a;
+  margin-bottom: 10px;
+}
+
+.total-amount {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.total-note {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Pop-in animation for the total box */
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+
+/* ----------- 11. CONTACT PAGE ----------- */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.contact-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #5a3a5a;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  border: 2px solid var(--sky);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--cream);
+  outline: none;
+  transition: border-color 0.3s;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+}
+
+.contact-form button {
+  margin-top: 25px;
+}
+
+/* Thank-you message shows only when URL has #thanks */
+.thanks-box {
+  display: none;
+  margin-top: 30px;
+  background-color: var(--lavender);
+  padding: 25px 30px;
+  border-radius: 18px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.thanks-box:target {
+  display: block;
+  animation: popIn 0.5s ease-out;
+}
+
+.thanks-box h3 {
+  margin-bottom: 8px;
+}
+
+
+/* ----------- 12. FOOTER ----------- */
+.footer {
+  background-color: var(--pink);
+  text-align: center;
+  padding: 18px;
+  margin-top: 50px;
+  font-size: 14px;
+  color: #6a3a4a;
+}
+
+
+/* ----------- 13. RESPONSIVE: MOBILE SCREENS ----------- */
+/* When screen is smaller than 700px, change the layout */
+@media (max-width: 700px) {
+
+  /* Stack the navbar nicely */
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* Hero section stacks vertically */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .welcome {
+    font-size: 30px;
+  }
+
+  /* Smaller page headings */
+  .page-heading h2 {
+    font-size: 28px;
+  }
+
+  /* Cards take full width */
+  .info-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+

@@ -1,0 +1,93 @@
+
+Action: file_editor create /app/frontend/public/travel-planner/contact.html --file-text "<!DOCTYPE html>
+<!-- 
+  Travel Planner - Contact Page
+  A simple contact form with Name, Email, Message and Submit button.
+-->
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+  <title>Travel Planner - Contact</title>
+  <link rel=\"stylesheet\" href=\"style.css\" />
+  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+  <link href=\"https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap\" rel=\"stylesheet\">
+</head>
+<body>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <header class=\"navbar\">
+    <h1 class=\"logo\">Travel Planner</h1>
+    <nav>
+      <ul class=\"nav-links\">
+        <li><a href=\"index.html\">Home</a></li>
+        <li><a href=\"destinations.html\">Destinations</a></li>
+        <li><a href=\"budget.html\">Budget</a></li>
+        <li><a href=\"contact.html\" class=\"active\">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============ PAGE HEADING ============ -->
+  <section class=\"page-heading\">
+    <h2>Contact Us</h2>
+    <p>Have a question or feedback? Fill out the form below!</p>
+  </section>
+
+  <!-- ============ CONTACT FORM ============ -->
+  <section class=\"contact-section\">
+    <form class=\"contact-form\" action=\"#thanks\" method=\"get\">
+
+      <!-- Name -->
+      <label for=\"name\">Your Name</label>
+      <input 
+        type=\"text\" 
+        id=\"name\" 
+        name=\"name\" 
+        placeholder=\"Enter your full name\" 
+        required 
+      />
+
+      <!-- Email -->
+      <label for=\"email\">Your Email</label>
+      <input 
+        type=\"email\" 
+        id=\"email\" 
+        name=\"email\" 
+        placeholder=\"example@email.com\" 
+        required 
+      />
+
+      <!-- Message -->
+      <label for=\"message\">Your Message</label>
+      <textarea 
+        id=\"message\" 
+        name=\"message\" 
+        rows=\"5\" 
+        placeholder=\"Type your message here...\" 
+        required
+      ></textarea>
+
+      <!-- Submit button -->
+      <button type=\"submit\" class=\"btn\">Send Message</button>
+    </form>
+
+    <!-- 
+      A pure CSS \"thank you\" message that shows up after clicking
+      Submit (URL becomes #thanks). No JavaScript used.
+    -->
+    <div id=\"thanks\" class=\"thanks-box\">
+      <h3>Thank You!</h3>
+      <p>Your message has been received. We'll get back to you soon.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class=\"footer\">
+    <p>&copy; 2026 Travel Planner | A beginner web project</p>
+  </footer>
+
+</body>
+</html>
+

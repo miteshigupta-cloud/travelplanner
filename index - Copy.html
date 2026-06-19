@@ -1,0 +1,99 @@
+Got it! Building a static HTML+CSS Travel Planner with no JavaScript, pastel colors, and Unsplash images. I'll place files in `/app/frontend/public/travel-planner/` so they're easy to edit and viewable via the preview URL.
+
+Note: With strictly no JS, the budget calculator will be display-only (shows a sample total when the button is "clicked" via CSS `:target` trick — a clever beginner-friendly technique that works with pure HTML/CSS).
+
+Let me build all the files in parallel:
+Action: file_editor create /app/frontend/public/travel-planner/index.html --file-text "<!DOCTYPE html>
+<!-- 
+  Travel Planner Website - Home Page
+  Made by a first-year student learning HTML & CSS
+-->
+<html lang=\"en\">
+<head>
+  <!-- Basic page setup -->
+  <meta charset=\"UTF-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+  <title>Travel Planner - Home</title>
+
+  <!-- Link to our CSS file -->
+  <link rel=\"stylesheet\" href=\"style.css\" />
+
+  <!-- A nice friendly Google Font -->
+  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+  <link href=\"https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap\" rel=\"stylesheet\">
+</head>
+<body>
+
+  <!-- ============ NAVIGATION BAR ============ -->
+  <header class=\"navbar\">
+    <h1 class=\"logo\">Travel Planner</h1>
+    <nav>
+      <ul class=\"nav-links\">
+        <li><a href=\"index.html\" class=\"active\">Home</a></li>
+        <li><a href=\"destinations.html\">Destinations</a></li>
+        <li><a href=\"budget.html\">Budget</a></li>
+        <li><a href=\"contact.html\">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============ HERO / WELCOME SECTION ============ -->
+  <section class=\"hero\">
+    <div class=\"hero-text\">
+      <h2 class=\"welcome\">Welcome to Travel Planner!</h2>
+      <p class=\"intro\">
+        Planning a trip can feel like a lot of work. This little website
+        helps you pick destinations, set a budget, and get in touch with
+        us — all in one place. Pack your bags and let the adventure begin!
+      </p>
+      <a href=\"destinations.html\" class=\"btn\">Explore Destinations</a>
+    </div>
+
+    <!-- One travel image on the home page -->
+    <div class=\"hero-image\">
+      <img 
+        src=\"https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&q=80\" 
+        alt=\"A traveller looking at a beautiful view\" 
+      />
+    </div>
+  </section>
+
+  <!-- ============ SIMPLE INFO CARDS ============ -->
+  <section class=\"info-section\">
+    <h3 class=\"section-title\">Why Use Travel Planner?</h3>
+    <div class=\"cards\">
+
+      <!-- Card 1 -->
+      <div class=\"info-card\">
+        <div class=\"emoji-circle\">★</div>
+        <h4>Pick a Place</h4>
+        <p>Browse 4 beautiful Indian destinations and pick the one you love.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class=\"info-card\">
+        <div class=\"emoji-circle\">$</div>
+        <h4>Plan a Budget</h4>
+        <p>Add up your travel, hotel, and food costs to know your total spend.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class=\"info-card\">
+        <div class=\"emoji-circle\">@</div>
+        <h4>Stay Connected</h4>
+        <p>Got questions? Drop us a message through the contact form.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class=\"footer\">
+    <p>&copy; 2026 Travel Planner | A beginner web project</p>
+  </footer>
+
+</body>
+</html>
+"
+Observation: Create successful: /app/frontend/public/travel-planner/index.html
